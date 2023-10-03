@@ -1,0 +1,77 @@
+openapi: 3.1.0
+info:
+  version: 1.0.0
+  title: Example
+
+paths:
+  /string:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: string
+      responses:
+        '200':
+          description: OK
+
+  /array:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                type: string
+      responses:
+        '200':
+          description: OK
+
+  /object:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                str:
+                  type: string
+                int:
+                  type: integer
+                bool:
+                  type: boolean
+                arr:
+                  type: array
+                  items:
+                    type: string
+      responses:
+        '200':
+          description: OK
+
+  /object-nested:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                object:
+                  type: object
+                  properties:
+                    str:
+                      type: string
+                    int:
+                      type: integer
+                    bool:
+                      type: boolean
+                    arr:
+                      type: array
+                      items:
+                        type: string
+      responses:
+        '200':
+          description: OK
+

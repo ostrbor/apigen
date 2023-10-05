@@ -1,53 +1,5 @@
 package main
 
-type OpenAPI struct {
-	Paths map[string]PathItem `yaml:"paths"`
-}
-
-type PathItem struct {
-	Get  *Operation `yaml:"get"`
-	Post *Operation `yaml:"post"`
-}
-
-type Operation struct {
-	Summary     string              `yaml:"summary"`
-	RequestBody RequestBody         `yaml:"requestBody"`
-	Responses   map[string]Response `yaml:"responses"`
-}
-
-type RequestBody struct {
-	Content `yaml:"content"`
-}
-
-type Content struct {
-	ApplicationJSON `yaml:"application/json"`
-}
-
-type ApplicationJSON struct {
-	Schema `yaml:"schema"`
-}
-
-type Schema struct {
-	Type       string              `yaml:"type"`
-	Properties map[string]Property `yaml:"properties"`
-}
-
-type Property struct {
-	Type        string   `yaml:"type"`
-	Description string   `yaml:"description"`
-	MinLength   *int     `yaml:"minLength,omitempty"`
-	MaxLength   *int     `yaml:"maxLength,omitempty"`
-	Pattern     string   `yaml:"pattern,omitempty"`
-	Enum        []string `yaml:"enum,omitempty"`
-	Format      string   `yaml:"format,omitempty"`
-	Items       *Schema  `yaml:"items,omitempty"`
-	//NestedObject map[string]Property `yaml:"properties,omitempty"`
-}
-
-type Response struct {
-	Content Content `yaml:"content"`
-}
-
 //func main() {
 //	yamlData, err := os.ReadFile("openapi.yaml")
 //	if err != nil {

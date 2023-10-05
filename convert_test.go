@@ -29,8 +29,11 @@ properties:
 	var schema Schema
 	err := yaml.Unmarshal([]byte(yamlSchema), &schema)
 	check(err)
-	s := toGoStruct("", schema)
-	if len(s.fields) != 4 {
-		t.Errorf("Expected 4 fields, got %d", len(s.fields))
+	ss := toGoStruct("", schema)
+	if len(ss) != 1 {
+		t.Errorf("expected 1 struct, got %d", len(ss))
+	}
+	if len(ss[0].fields) != 4 {
+		t.Errorf("Expected 4 fields, got %d", len(ss[0].fields))
 	}
 }

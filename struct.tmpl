@@ -1,0 +1,5 @@
+type {{.Name}} struct {
+	{{range .Fields}}
+	{{- printf "%-10s %-10s `json:\"%s\"`" .Name .Typ .JSName}}
+	{{end}}
+}

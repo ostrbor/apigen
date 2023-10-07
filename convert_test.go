@@ -81,3 +81,32 @@ properties:
 		println(generateCode(s))
 	}
 }
+
+func Test_toGoStruct2(t *testing.T) {
+	yamlSchema := `
+type: object
+properties:
+  str:
+   type: string
+  int:
+    type: integer
+  bool:
+    type: boolean
+  arr:
+    type: array
+    items:
+      type: string
+  obj:
+    type: object
+    properties:
+      name:
+        type: string
+`
+	var schema Schema
+	err := yaml.Unmarshal([]byte(yamlSchema), &schema)
+	check(err)
+	ss := objToStruct("", schema)
+	for _, s := range ss {
+		println(s)
+	}
+}

@@ -46,19 +46,6 @@ type Schema struct {
 	UniqueItems *bool             `yaml:"uniqueItems"`
 }
 
-//type Property struct {
-//	Type        string              `yaml:"type"`
-//	Description string              `yaml:"description"`
-//	Required    []string            `yaml:"required"`
-//	MinLength   *int                `yaml:"minLength,omitempty"`
-//	MaxLength   *int                `yaml:"maxLength,omitempty"`
-//	Pattern     string              `yaml:"pattern,omitempty"`
-//	Enum        []string            `yaml:"enum,omitempty"`
-//	Format      string              `yaml:"format,omitempty"`
-//	Items       *Schema             `yaml:"items,omitempty"`
-//	Properties  map[string]Property `yaml:"properties,omitempty"`
-//}
-
 type Response struct {
 	Content Content `yaml:"content"`
 }

@@ -8,9 +8,9 @@ import (
 )
 
 var (
-	openapiPath = flag.String("path", "", "Set the OpenAPI path to process")
+	openapiPath = flag.String("p", "", "set the OpenAPI path to process")
 	//openapiVerb = flag.String("verb", "", "Set the OpenAPI verb to process")
-	openapiFile = flag.String("file", "openapi.yaml", "Specify the OpenAPI file")
+	openapiFile = flag.String("f", "openapi.yaml", "specify the OpenAPI file")
 )
 
 func main() {

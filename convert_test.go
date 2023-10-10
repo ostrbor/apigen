@@ -30,6 +30,13 @@ properties:
     properties:
       street:
         type: string
+  contacts:
+    type: array
+    items:
+      type: object
+      properties:
+        name:	
+          type: string
 `
 	var schema Schema
 	err := yaml.Unmarshal([]byte(yamlSchema), &schema)

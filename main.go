@@ -9,7 +9,6 @@ import (
 
 var (
 	openapiPath = flag.String("p", "", "set the OpenAPI path to process")
-	//openapiVerb = flag.String("verb", "", "Set the OpenAPI verb to process")
 	openapiFile = flag.String("f", "openapi.yaml", "specify the OpenAPI file")
 )
 
